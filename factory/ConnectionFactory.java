@@ -12,7 +12,7 @@ public class ConnectionFactory {
             return DriverManager.getConnection(
                 "jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
                 "RM561195",
-                "DtNasc#300405"
+                ""
             );
         } catch (ClassNotFoundException e) {
             throw new SQLException("Driver JDBC não encontrado.", e);

@@ -1,0 +1,17 @@
+services:
+  oracle-db:
+    image: container-registry.oracle.com/database/express:21.3.0.0
+    container_name: oracle-db
+    ports:
+      - "1521:1521"
+      - "8080:8080"
+    environment:
+      - ORACLE_PASSWORD=oracle123
+      - ORACLE_PDB=PDB1
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    restart: always
+
+volumes:
+  oracle-data:
+    driver: local
